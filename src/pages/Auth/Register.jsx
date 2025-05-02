@@ -29,7 +29,7 @@ const Register = () => {
     };
 
     try {
-      const response = await fetch('http://mypassions.lovestoblog.com/phpApi/SMS_project/add_users.php', {  // Use your actual API URL
+      const response = await fetch('https://mypassions.lovestoblog.com/phpApi/SMS_project/add_users.php', {  // Use your actual API URL
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
