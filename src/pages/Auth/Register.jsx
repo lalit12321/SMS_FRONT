@@ -29,7 +29,7 @@ const Register = () => {
     };
 
     try {
-      const response = await fetch('http://localhost/phpApi/SMS_project/add_users.php', {
+      const response = await fetch('http://mypassions.lovestoblog.com/phpApi/SMS_project/add_users.php', {  // Use your actual API URL
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -39,15 +39,16 @@ const Register = () => {
 
       const result = await response.json();
 
-      if (result.success) {
-        alert("User registered successfully!");
+      // Check the response structure
+      if (response.ok) {
+        alert('User registered successfully!');
         navigate('/login');
       } else {
-        alert("Registration failed: " + (result.message || "Unknown error"));
+        alert('Registration failed: ' + (result.message || 'Unknown error'));
       }
     } catch (err) {
-      console.error("Error:", err);
-      alert("Something went wrong during registration.");
+      console.error('Error:', err);
+      alert('Something went wrong during registration.');
     }
   };
 
